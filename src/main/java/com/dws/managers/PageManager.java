@@ -1,10 +1,10 @@
 package com.dws.managers;
 
-import com.dws.pages.CartPage;
-import com.dws.pages.ProductListPage;
-import com.dws.pages.ProductPage;
-import com.dws.pages.base.PageBase;
-import com.dws.pages.MenuPage;
+import com.dws.pageObject.pages.CartPage;
+import com.dws.pageObject.pages.ProductListPage;
+import com.dws.pageObject.pages.ProductPage;
+import com.dws.pages.base.PageObjectBase;
+import com.dws.pageObject.pages.MenuPage;
 import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class PageManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(PageManager.class);
     private static PageManager INSTANCE;
-    private static Map<String, PageBase> mapPages = new HashMap<>();
+    private static Map<String, PageObjectBase> mapPages = new HashMap<>();
 
     public static PageManager getPageManager() {
         if(INSTANCE == null) {
@@ -38,7 +38,7 @@ public class PageManager {
         return getPage(CartPage.class);
     }
 
-    private <T extends PageBase> T getPage(Class<? extends PageBase> classPage) {
+    private <T extends PageObjectBase> T getPage(Class<? extends PageObjectBase> classPage) {
         if(mapPages.isEmpty() || mapPages.get(classPage.getClass().getName()) == null) {
             if(classPage == MenuPage.class)
                 mapPages.put(classPage.toString(), new MenuPage());

@@ -1,14 +1,14 @@
-package com.dws.pages;
+package com.dws.pageObject.pages;
 
-import static com.dws.helper.CartHelper.geCartHelper;
 import com.dws.helper.ProductHelper;
-import com.dws.pages.base.PageBase;
+import com.dws.pages.base.PageObjectBase;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import static com.dws.helper.CartHelper.getCartHelper;
 
-public class ProductPage extends PageBase {
+public class ProductPage extends PageObjectBase {
     
     @FindBy(xpath = "//div[contains(@class, 'add-to')]//input[contains(@class, 'add-to-c')]")
     private WebElement buttonAddToCart;
@@ -33,7 +33,7 @@ public class ProductPage extends PageBase {
         float price = Float.parseFloat(labelPrice);
         String labelQuantity = inputQuanity.getAttribute("value").replaceAll("[^\\d.]", "");
         int quantity = Integer.parseInt(labelQuantity);
-        geCartHelper().addProduct(new ProductHelper(labelProductName.getText(),
+        getCartHelper().addProduct(new ProductHelper(labelProductName.getText(),
                 price, quantity));
     }
     
@@ -65,7 +65,7 @@ public class ProductPage extends PageBase {
     
     public ProductPage inputQuanityEnterNumber(int number) {
         inputQuanity.sendKeys(Integer.toString(number));
-        geCartHelper().getProductByName(labelProductName.getText()).setQuantity(number);
+        getCartHelper().getProductByName(labelProductName.getText()).setQuantity(number);
         return this;
     }
     

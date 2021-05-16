@@ -1,12 +1,12 @@
 package com.dws.tests;
 
+import com.dws.test.base.BaseElementsTest;
 import org.junit.jupiter.api.*;
-import com.dws.test.base.BaseTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Testing the product page")
-public class ProductTest extends BaseTest {
+public class ProductElementsTest extends BaseElementsTest {
     String colorErrorMessage = "204, 0, 0";
     String textErrorMessage = "Quantity should be positive";
     String colorSuccessMessage = "145, 189, 9";
@@ -15,41 +15,34 @@ public class ProductTest extends BaseTest {
     @Test
     public void CheckCartPriceTest() {
         // Go to the "Books" menu
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .clickLeftMenu("Books");
         // Open product page "Computing and Internet"
-        apptest
-                .getProductListPage()
+        productListSteps
                 .clickToProduct("Computing and Internet");
-        // Add a product to the cart and
-        apptest
-                .getProductPage()
+        // Add a product to the cart
+        productSteps
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(3)
                 .clickButtonAddToCart()
                 .assertBarNotificationColor(colorSuccessMessage)
                 .assertBarNotificationText(textSuccessMessage);
         // Go to the "Electronics - Cell phones" menu
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .clickLeftMenu("Electronics")
                 .clickLeftMenu("Cell phones");
         // Open product page "Cell phones"
-        apptest
-                .getProductListPage()
+        productListSteps
                 .clickToProduct("Phone Cover");
         // Add a product to the cart and
-        apptest
-                .getProductPage()
+        productSteps
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(4)
                 .clickButtonAddToCart()
                 .assertBarNotificationColor(colorSuccessMessage)
                 .assertBarNotificationText(textSuccessMessage);
         // Checking product quantity in the top menu
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .assertLabelShoppingCartQuantity()
                 .goToCart()
                 .assertTotalPrice();
@@ -59,18 +52,15 @@ public class ProductTest extends BaseTest {
     @ValueSource(strings = {"5", "94", "1025"})
     public void SuccessMessageTest(int input) {
         // Go to the "Electronics - Camera, photo" menu
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .mouseMoveToTopMenu("Computers")
                 .clickTopSubMenu("Notebooks");
         // Open product page "Computing and Internet"
-        apptest
-                .getProductListPage()
+        productListSteps
                 .clickToProduct("14.1-inch Laptop");
         // Add a product to the cart and
         // check the correctness of the message
-        apptest
-                .getProductPage()
+        productSteps
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(input)
                 .clickButtonAddToCart()
@@ -82,17 +72,13 @@ public class ProductTest extends BaseTest {
     @ValueSource(strings = {"-1", "f", "6.5", "4,3", "!", "%:;?", "0"})
     public void ErrorMessageTest(String input) {
         // Go to the "Books" menu
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .clickLeftMenu("Books");
         // Open product page "Computing and Internet"
-        apptest
-                .getProductListPage()
+        productListSteps
                 .clickToProduct("Computing and Internet");
-        // Add a product to the cart and
-        // check the correctness of the message
-        apptest
-                .getProductPage()
+        // Add a product to the cart
+        productSteps
                 .inputQuanityClear()
                 .inputQuanityEnterText(input)
                 .clickButtonAddToCart()
@@ -103,42 +89,32 @@ public class ProductTest extends BaseTest {
     @Test
     public void CheckBrokenImageHomePageTest() {
         // Find Broken Image on Home Page
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .findBrokenImage();
     }
     
     @Test
     public void CheckBrokenImageProductListPageTest() {
         // Find broken image on product listing page
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .clickLeftMenu("Jewelry")
                 .findBrokenImage();
         
         // Find broken image on product page
-        apptest
-                .getMenuToPage()
-                .clickLeftMenu("Jewelry");
-        apptest
-                .getProductListPage()
+        productListSteps
                 .clickToProduct("Create Your Own Jewelry");
-        apptest
-                .getProductPage()
+        productSteps
                 .findBrokenImage();
     }
     
     @Test
     public void CheckBrokenImageProductPageTest() {
         // Find broken image on product page
-        apptest
-                .getMenuToPage()
+        menuSteps
                 .clickLeftMenu("Jewelry");
-        apptest
-                .getProductListPage()
+        productListSteps
                 .clickToProduct("Create Your Own Jewelry");
-        apptest
-                .getProductPage()
+        productSteps
                 .findBrokenImage();
     }
 }

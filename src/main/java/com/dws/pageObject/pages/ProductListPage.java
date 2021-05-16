@@ -1,12 +1,12 @@
-package com.dws.pages;
+package com.dws.pageObject.pages;
 
-import com.dws.pages.base.PageBase;
+import com.dws.pages.base.PageObjectBase;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductListPage extends PageBase {
+public class ProductListPage extends PageObjectBase {
 
     @FindBy(xpath = "//div[@class='product-grid']//div[@class='product-item']")
     private List<WebElement> listProduct;

@@ -1,14 +1,14 @@
-package com.dws.pages;
+package com.dws.pageObject.pages;
 
-import static com.dws.helper.CartHelper.geCartHelper;
 import static com.dws.managers.PageManager.getPageManager;
-import com.dws.pages.base.PageBase;
+import com.dws.pages.base.PageObjectBase;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import static com.dws.helper.CartHelper.getCartHelper;
 
-public class MenuPage extends PageBase {
+public class MenuPage extends PageObjectBase {
     @FindBy(xpath = "//ul[@class='top-menu']//li")
     private List<WebElement> listTopMenu;
     
@@ -47,7 +47,7 @@ public class MenuPage extends PageBase {
     public MenuPage assertLabelShoppingCartQuantity() {
         String label = labelShoppingCartQuantity.getText().replaceAll("[^\\d.]", "");
         int fromLabel = Integer.parseInt(label);
-        Assertions.assertEquals(geCartHelper().getTotalQuantity(),
+        Assertions.assertEquals(getCartHelper().getTotalQuantity(),
                 fromLabel, "Checking product quantity in the top menu");
         return this;
     }

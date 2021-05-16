@@ -21,13 +21,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PageBase {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(PageBase.class);
+public class PageObjectBase {
+    protected static final Logger LOGGER = LoggerFactory.getLogger(PageObjectBase.class);
     protected WebDriverWait wait;
     protected Actions action = new Actions(getDriver());
     protected CartHelper cartHelper;
     
-    public PageBase() {
+    public PageObjectBase() {
         PageFactory.initElements(getDriver(), this);
         long waitTime = Long.parseLong(getThisProperties()
                 .getProperty(WAIT_TIMEOUTINSECONDS));
@@ -36,7 +36,7 @@ public class PageBase {
         wait = new WebDriverWait(getDriver(), waitTime, waitSleep);
     }
     
-    public <T extends PageBase> T findBrokenLinks() {
+    public <T extends PageObjectBase> T findBrokenLinks() {
         List<WebElement> links = getDriver().findElements(By.tagName("a"));
  
         if(links.size() > 0) {
@@ -50,7 +50,7 @@ public class PageBase {
         return (T) this;
     }
 
-    public <T extends PageBase> T findBrokenImage() {
+    public <T extends PageObjectBase> T findBrokenImage() {
         List<WebElement> images = getDriver().findElements(By.tagName("img"));
 
         if(images.size() > 0) {

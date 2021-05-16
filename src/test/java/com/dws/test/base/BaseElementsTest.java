@@ -1,14 +1,15 @@
 package com.dws.test.base;
 
+import static com.dws.helper.CartHelper.getCartHelper;
 import com.dws.managers.InitManager;
-import com.dws.managers.PageManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
+import com.dws.pageElements.steps.*;
 
-public class BaseTest {
-    protected PageManager apptest = PageManager.getPageManager();
+public class BaseElementsTest {
+    public CartSteps cartSteps = new CartSteps();
+    public MenuSteps menuSteps = new MenuSteps();
+    public ProductListSteps productListSteps = new ProductListSteps();
+    public ProductSteps productSteps = new ProductSteps();
     
     @BeforeAll
     public static void beforeAll() {
@@ -28,5 +29,6 @@ public class BaseTest {
     @AfterEach
     public void afterEach() {
         InitManager.clearCookies();
+        getCartHelper().clearCartList();
     }
 }
