@@ -48,7 +48,7 @@ Test run settings are located in the "environment.properties" file located in:
 - "path.data.engine.file" - File name of the table with tests
 
 ## Framework structure
-![Image alt](https://github.com/Mirents/ui_page_example/raw/main/src/test/resources/SchemeFramework.jpg)
+![Image alt](https://github.com/Mirents/ui_page_example/raw/master/src/test/resources/SchemeFramework.jpg)
 
 ## For reference
 Browser driver included: ChromeDriver 90.0.4430.24
