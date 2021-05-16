@@ -1,6 +1,6 @@
 ## Tutorial Project for Automated Testing Using "PageObject" and "PageElement" 
 ### Description:
-The framework uses examples of using different models of presentation of web pages: "PageObject" and "PageElement".
+The framework uses examples of different presentation models for web pages: "PageObject" and "PageElement".
 ### Applied technology:
 - Language: Java 1.8
 - Build Automation Tool: Maven
