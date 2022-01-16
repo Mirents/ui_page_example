@@ -28,8 +28,8 @@ To run tests on Unix, you need to run the command for the "/unix/chromedriver" f
 chmod u+x chromedriver
 ```
 ## Settings
-Test run settings are located in the "environment.properties" file located in:
-"src/test/resources/"environment.properties"
+Test run settings are located in the "application.properties" file located in:
+"src/test/resources/application.properties"
 - "app.url" - Test site url address
 - "browser.is.headless" - Non-graphical mode (yes/no)
 - "browser.maximize.window" - Maximize window to full screen (yes/no)
