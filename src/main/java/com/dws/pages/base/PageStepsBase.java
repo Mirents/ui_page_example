@@ -77,7 +77,7 @@ public class PageStepsBase {
             for(int index=0;index<images.size();index++)
             {
                 WebElement image = images.get(index);
-                String imageURL= image.getAttribute("src");
+                String imageURL = image.getAttribute("src");
                 
                 isBrokenLink(imageURL);
 

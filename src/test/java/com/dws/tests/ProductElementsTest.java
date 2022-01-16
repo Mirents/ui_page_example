@@ -7,10 +7,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Testing the product page")
 public class ProductElementsTest extends BaseElementsTest {
-    String colorErrorMessage = "204, 0, 0";
-    String textErrorMessage = "Quantity should be positive";
-    String colorSuccessMessage = "145, 189, 9";
-    String textSuccessMessage = "The product has been added to your shopping cart";
+    private String colorErrorMessage = "204, 0, 0";
+    private String textErrorMessage = "Quantity should be positive";
+    private String colorSuccessMessage = "145, 189, 9";
+    private String textSuccessMessage = "The product has been added to your shopping cart";
 
     @Test
     public void CheckCartPriceTest() {

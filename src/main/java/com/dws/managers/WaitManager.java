@@ -7,16 +7,16 @@ import static com.dws.utils.ProperitesConstant.WAIT_TIMEOUTINSECONDS;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitManager {
-    private static WebDriverWait wait;
+    private static WebDriverWait INSTANCE = null;
     
     public static WebDriverWait getWaitManager() {
-        if(wait == null) {
+        if(INSTANCE == null) {
             long waitTime = Long.parseLong(getThisProperties()
                 .getProperty(WAIT_TIMEOUTINSECONDS));
             long waitSleep = Long.parseLong(getThisProperties()
                     .getProperty(WAIT_SLEEPINMILLIS));
-            wait = new WebDriverWait(getDriver(), waitTime, waitSleep);
+            INSTANCE = new WebDriverWait(getDriver(), waitTime, waitSleep);
         }
-        return wait;
+        return INSTANCE;
     }
 }

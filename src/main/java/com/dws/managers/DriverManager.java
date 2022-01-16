@@ -14,8 +14,6 @@ import org.slf4j.LoggerFactory;
 
 public class DriverManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebDriver.class);
-    
-    private static WebDriver driver;
     private static EventFiringWebDriver eventDriver;
     private static DriverManager INSTANCE = null;
     private static WebDriverListener eventListener;
@@ -80,7 +78,7 @@ public class DriverManager {
     private void createDriver(ChromeOptions chromeOptions) {
         try {
             LOGGER.debug("Creating a chrome browser web driver");
-            driver = new ChromeDriver(chromeOptions);
+            WebDriver driver = new ChromeDriver(chromeOptions);
             eventDriver = new EventFiringWebDriver(driver);
             eventDriver.register(eventListener);
         } catch(IllegalStateException ex) {
