@@ -2,16 +2,15 @@ package com.dws.pageElements.element;
 
 import static com.dws.managers.DriverManager.getDriver;
 import static com.dws.managers.WaitManager.getWaitManager;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+@Slf4j
 public class ListElements {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(ListElements.class);
     protected Actions action = new Actions(getDriver());
     private By byThisElem;
 
@@ -38,7 +37,7 @@ public class ListElements {
         }
         String msg = "Element to name '" + name + "' not found to "
                 + this.getClass().getName();
-        LOGGER.error(msg);
+        log.error(msg);
         Assertions.fail(msg);
         return null;
     }
@@ -51,7 +50,7 @@ public class ListElements {
         }
         String msg = "Element to by '" + by + "' not found to "
                 + this.getClass().getName();
-        LOGGER.error(msg);
+        log.error(msg);
         Assertions.fail(msg);
         return null;
     }

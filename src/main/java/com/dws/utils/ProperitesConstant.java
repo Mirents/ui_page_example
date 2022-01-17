@@ -1,6 +1,7 @@
 package com.dws.utils;
 
 public class ProperitesConstant {
+    
     public static final String APP_URL = "app.url";
 
     public static final String BROWSER_IS_HEADLESS = "browser.is.headless";

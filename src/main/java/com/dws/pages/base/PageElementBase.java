@@ -1,8 +1,8 @@
 package com.dws.pages.base;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
-public class PageElementBase {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(PageElementBase.class);
+@Slf4j
+public abstract class PageElementBase {
+    
 }

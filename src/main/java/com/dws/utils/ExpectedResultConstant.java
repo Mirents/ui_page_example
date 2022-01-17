@@ -1,6 +1,7 @@
 package com.dws.utils;
 
 public class ExpectedResultConstant {
+    
     public final static String COLOR_ERROR_MESSAGE = "204, 0, 0";
     
     public final static String TEXT_ERROR_MESSAGE = 

@@ -18,12 +18,12 @@ public class BaseObjectTest extends BaseTest {
     @AfterAll
     public static void afterAll() {
         InitManager.quitFramework();
+        clearLoggerUID();
     }
     
     @BeforeEach
     public void beforeEach() {
         InitManager.openBrowser();
-        clearLoggerUID();
     }
     
     @AfterEach

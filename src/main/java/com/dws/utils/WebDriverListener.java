@@ -1,15 +1,15 @@
 package com.dws.utils;
 
 import com.dws.managers.DriverManager;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+@Slf4j
 public class WebDriverListener implements WebDriverEventListener {
     private final String color;
     private final int interval;
@@ -20,145 +20,142 @@ public class WebDriverListener implements WebDriverEventListener {
         this.interval = interval;
         this.count = count;
     }
-    
-    private static final Logger LOGGER = LoggerFactory
-            .getLogger(WebDriverListener.class);
 
     @Override
     public void beforeAlertAccept(WebDriver wd) {
-        LOGGER.trace("beforeAlertAccept");
+        log.trace("beforeAlertAccept");
     }
 
     @Override
     public void afterAlertAccept(WebDriver wd) {
-        LOGGER.trace("afterAlertAccept");
+        log.trace("afterAlertAccept");
     }
 
     @Override
     public void afterAlertDismiss(WebDriver wd) {
-        LOGGER.trace("afterAlertDismiss");
+        log.trace("afterAlertDismiss");
     }
 
     @Override
     public void beforeAlertDismiss(WebDriver wd) {
-        LOGGER.trace("beforeAlertDismiss");
+        log.trace("beforeAlertDismiss");
     }
 
     @Override
     public void beforeNavigateTo(String string, WebDriver wd) {
-        LOGGER.trace("beforeNavigateTo");
+        log.trace("beforeNavigateTo");
     }
 
     @Override
     public void afterNavigateTo(String string, WebDriver wd) {
-        LOGGER.trace("afterNavigateTo");
+        log.trace("afterNavigateTo");
     }
 
     @Override
     public void beforeNavigateBack(WebDriver wd) {
-        LOGGER.trace("beforeNavigateBack");
+        log.trace("beforeNavigateBack");
     }
 
     @Override
     public void afterNavigateBack(WebDriver wd) {
-        LOGGER.trace("afterNavigateBack");
+        log.trace("afterNavigateBack");
     }
 
     @Override
     public void beforeNavigateForward(WebDriver wd) {
-        LOGGER.trace("beforeNavigateForward");
+        log.trace("beforeNavigateForward");
     }
 
     @Override
     public void afterNavigateForward(WebDriver wd) {
-        LOGGER.trace("afterNavigateForward");
+        log.trace("afterNavigateForward");
     }
 
     @Override
     public void beforeNavigateRefresh(WebDriver wd) {
-        LOGGER.trace("beforeNavigateRefresh");
+        log.trace("beforeNavigateRefresh");
     }
 
     @Override
     public void afterNavigateRefresh(WebDriver wd) {
-        LOGGER.trace("afterNavigateRefresh");
+        log.trace("afterNavigateRefresh");
     }
 
     @Override
     public void beforeFindBy(By by, WebElement we, WebDriver wd) {
-        LOGGER.trace("beforeFindBy");
+        log.trace("beforeFindBy");
     }
 
     @Override
     public void afterFindBy(By by, WebElement we, WebDriver wd) {
-        LOGGER.trace("afterFindBy");
+        log.trace("afterFindBy");
     }
 
     @Override
     public void beforeClickOn(WebElement we, WebDriver wd) {
-        LOGGER.trace("beforeClickOn");        
+        log.trace("beforeClickOn");        
         flash(we);
     }
 
     @Override
     public void afterClickOn(WebElement we, WebDriver wd) {
-        LOGGER.trace("afterClickOn");
+        log.trace("afterClickOn");
     }
 
     @Override
     public void beforeChangeValueOf(WebElement we, WebDriver wd, CharSequence[] css) {
-        LOGGER.trace("beforeChangeValueOf");
+        log.trace("beforeChangeValueOf");
         flash(we);
     }
 
     @Override
     public void afterChangeValueOf(WebElement we, WebDriver wd, CharSequence[] css) {
-        LOGGER.trace("afterChangeValueOf");
+        log.trace("afterChangeValueOf");
     }
 
     @Override
     public void beforeScript(String string, WebDriver wd) {
-        LOGGER.trace("beforeScript");
+        log.trace("beforeScript");
     }
 
     @Override
     public void afterScript(String string, WebDriver wd) {
-        LOGGER.trace("afterScript");
+        log.trace("afterScript");
     }
 
     @Override
     public void beforeSwitchToWindow(String string, WebDriver wd) {
-        LOGGER.trace("beforeSwitchToWindow");
+        log.trace("beforeSwitchToWindow");
     }
 
     @Override
     public void afterSwitchToWindow(String string, WebDriver wd) {
-        LOGGER.trace("afterSwitchToWindow");
+        log.trace("afterSwitchToWindow");
     }
 
     @Override
     public void onException(Throwable thrwbl, WebDriver wd) {
-        LOGGER.trace("onException");
+        log.trace("onException");
     }
 
     @Override
     public <X> void beforeGetScreenshotAs(OutputType<X> ot) {
-        LOGGER.trace("beforeGetScreenshotAs");
+        log.trace("beforeGetScreenshotAs");
     }
 
     @Override
     public <X> void afterGetScreenshotAs(OutputType<X> ot, X x) {
-        LOGGER.trace("afterGetScreenshotAs");
+        log.trace("afterGetScreenshotAs");
     }
 
     @Override
     public void beforeGetText(WebElement we, WebDriver wd) {
-        LOGGER.trace("beforeGetText");
+        log.trace("beforeGetText");
     }
 
     @Override
     public void afterGetText(WebElement we, WebDriver wd, String string) {
-        LOGGER.trace("afterGetText");
+        log.trace("afterGetText");
     }
     
     private void flash(WebElement element) {

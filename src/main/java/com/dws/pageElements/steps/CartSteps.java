@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import static com.dws.helper.CartHelper.getCartHelper;
 
 public class CartSteps extends PageStepsBase {
+    
     public CartSteps assertTotalPrice() {
         float priceLabelTotal = Float.parseFloat(getCartElements()
                 .getLabelTotal().getText());

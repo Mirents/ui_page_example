@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import static com.dws.helper.CartHelper.getCartHelper;
 
 public class MenuPage extends PageObjectBase {
+    
     @FindBy(xpath = "//ul[@class='top-menu']//li")
     private List<WebElement> listTopMenu;
     

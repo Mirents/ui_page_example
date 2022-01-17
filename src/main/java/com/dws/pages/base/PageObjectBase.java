@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,11 +19,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+@Slf4j
 public class PageObjectBase {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(PageObjectBase.class);
     protected WebDriverWait wait;
     protected Actions action = new Actions(getDriver());
     protected CartHelper cartHelper;
@@ -133,7 +132,7 @@ public class PageObjectBase {
         }
         String msg = "Element to name '" + name + "' not found to "
                 + this.getClass().getName();
-        LOGGER.error(msg);
+        log.error(msg);
         Assertions.fail(msg);
         return null;
     }
@@ -146,7 +145,7 @@ public class PageObjectBase {
         }
         String msg = "Element to by '" + by + "' not found to "
                 + this.getClass().getName();
-        LOGGER.error(msg);
+        log.error(msg);
         Assertions.fail(msg);
         return null;
     }

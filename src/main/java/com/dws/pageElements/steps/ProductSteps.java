@@ -8,8 +8,7 @@ import static com.dws.helper.CartHelper.getCartHelper;
 import com.dws.entities.Product;
 
 public class ProductSteps extends PageStepsBase {
-            
-    
+
     public ProductSteps assertBarNotificationColor(String color) {
         boolean isContains = false;
         getWaitManager().until(ExpectedConditions

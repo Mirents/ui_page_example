@@ -3,11 +3,10 @@ package com.dws.helper;
 import com.dws.entities.Product;
 import java.util.ArrayList;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class CartHelper {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(CartHelper.class);
     private static CartHelper instance;
     private List<Product> cart;
     
@@ -64,7 +63,7 @@ public class CartHelper {
         for(Product ph: cart)
             data += ph.getName() + " - " + ph.getPrice() + " - "
                     + ph.getQuantity();
-        LOGGER.debug(data);
+        log.debug(data);
         return data;
     }
 }

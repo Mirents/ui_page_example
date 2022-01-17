@@ -19,11 +19,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class PageStepsBase {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(PageStepsBase.class);
     protected Actions action = new Actions(getDriver());
     protected CartHelper cartHelper;
     private CartElements cartElements;

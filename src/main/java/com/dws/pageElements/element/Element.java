@@ -9,11 +9,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WrapsElement;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Element implements WebElement, WrapsElement {
-    protected static final Logger LOGGER = LoggerFactory.getLogger(Element.class);
     private By byThisElem;
 
     public Element(By by) {
