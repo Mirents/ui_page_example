@@ -7,6 +7,7 @@ The framework uses examples of different presentation models for web pages: "Pag
 - Language: Java 1.8
 - Build Automation Tool: Maven
 - Frameworks: JUnit 5
+- Logger: Logback with Slf4j
 - Drivers used: Selenium
 - Test website: demowebshop.tricentis.com
 ### Features:
