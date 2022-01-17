@@ -5,7 +5,7 @@ import com.dws.pages.base.PageStepsBase;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import static com.dws.helper.CartHelper.getCartHelper;
-import com.dws.helper.ProductHelper;
+import com.dws.entities.Product;
 
 public class ProductSteps extends PageStepsBase {
             
@@ -39,7 +39,7 @@ public class ProductSteps extends PageStepsBase {
     
     public ProductSteps inputQuanityEnterNumber(int number) {
         getProductElements().getInputQuanity().sendKeys(Integer.toString(number));
-        ProductHelper ph = getCartHelper().getProductByName(getProductElements().getLabelProductName()
+        Product ph = getCartHelper().getProductByName(getProductElements().getLabelProductName()
                 .getText());
         ph.setQuantity(number);
         return this;

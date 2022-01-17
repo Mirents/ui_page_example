@@ -1,6 +1,6 @@
 package com.dws.pageElements.pages;
 
-import com.dws.helper.ProductHelper;
+import com.dws.entities.Product;
 import com.dws.pageElements.element.Element;
 import com.dws.pages.base.PageElementBase;
 import lombok.Getter;
@@ -41,7 +41,7 @@ public class ProductElements extends PageElementBase {
             String labelQuantity = getInputQuanity()
                     .getAttribute("value").replaceAll("[^\\d.]", "");
             int quantity = Integer.parseInt(labelQuantity);
-            getCartHelper().addProduct(new ProductHelper(
+            getCartHelper().addProduct(new Product(
                     getLabelProductName().getText(),
                     price, quantity));
         }

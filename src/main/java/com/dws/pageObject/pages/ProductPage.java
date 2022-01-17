@@ -1,6 +1,6 @@
 package com.dws.pageObject.pages;
 
-import com.dws.helper.ProductHelper;
+import com.dws.entities.Product;
 import com.dws.pages.base.PageObjectBase;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
@@ -33,7 +33,7 @@ public class ProductPage extends PageObjectBase {
         float price = Float.parseFloat(labelPrice);
         String labelQuantity = inputQuanity.getAttribute("value").replaceAll("[^\\d.]", "");
         int quantity = Integer.parseInt(labelQuantity);
-        getCartHelper().addProduct(new ProductHelper(labelProductName.getText(),
+        getCartHelper().addProduct(new Product(labelProductName.getText(),
                 price, quantity));
     }
     
