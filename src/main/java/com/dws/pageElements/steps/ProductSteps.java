@@ -12,17 +12,21 @@ public class ProductSteps extends PageStepsBase {
     
     public ProductSteps assertBarNotificationColor(String color) {
         boolean isContains = false;
-        getWaitManager().until(ExpectedConditions.visibilityOf(getProductElements().getBarNotification()));
-        if(getProductElements().getBarNotification().getCssValue("background").contains(color))
+        getWaitManager().until(ExpectedConditions
+                .visibilityOf(getProductElements().getBarNotification()));
+        if(getProductElements().getBarNotification()
+                .getCssValue("background").contains(color))
             isContains = true;
         Assertions.assertTrue(isContains, "Checking the correctness of the color");
         return this;
     }
     
     public ProductSteps assertBarNotificationText(String text) {
-        getWaitManager().until(ExpectedConditions.textToBePresentInElement(getProductElements()
+        getWaitManager().until(ExpectedConditions
+                .textToBePresentInElement(getProductElements()
                 .getBarNotificationMessage(), text));
-        Assertions.assertEquals(getProductElements().getBarNotificationMessage().getText(), text,
+        Assertions.assertEquals(getProductElements()
+                .getBarNotificationMessage().getText(), text,
                 "Checking the message text");
         return this;
     }
@@ -39,8 +43,8 @@ public class ProductSteps extends PageStepsBase {
     
     public ProductSteps inputQuanityEnterNumber(int number) {
         getProductElements().getInputQuanity().sendKeys(Integer.toString(number));
-        Product ph = getCartHelper().getProductByName(getProductElements().getLabelProductName()
-                .getText());
+        Product ph = getCartHelper().getProductByName(getProductElements()
+                .getLabelProductName().getText());
         ph.setQuantity(number);
         return this;
     }
