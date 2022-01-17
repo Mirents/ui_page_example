@@ -6,11 +6,12 @@ import com.dws.managers.PageManager;
 import static com.dws.managers.PageManager.getPageManager;
 import org.junit.jupiter.api.*;
 
-public class BaseObjectTest {
+public class BaseObjectTest extends BaseTest {
     protected PageManager apptest = getPageManager();
     
     @BeforeAll
     public static void beforeAll() {
+        setupLoggerUID();
         InitManager.initFramework();
     }
 
@@ -22,6 +23,7 @@ public class BaseObjectTest {
     @BeforeEach
     public void beforeEach() {
         InitManager.openBrowser();
+        clearLoggerUID();
     }
     
     @AfterEach

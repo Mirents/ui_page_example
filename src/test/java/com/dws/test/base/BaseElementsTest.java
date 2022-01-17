@@ -4,9 +4,8 @@ import static com.dws.helper.CartHelper.getCartHelper;
 import com.dws.managers.InitManager;
 import org.junit.jupiter.api.*;
 import com.dws.pageElements.steps.*;
-import org.slf4j.MDC;
 
-public class BaseElementsTest {
+public class BaseElementsTest extends BaseTest {
     public CartSteps cartSteps = new CartSteps();
     public MenuSteps menuSteps = new MenuSteps();
     public ProductListSteps productListSteps = new ProductListSteps();
@@ -14,17 +13,18 @@ public class BaseElementsTest {
     
     @BeforeAll
     public static void beforeAll() {
+        setupLoggerUID();
         InitManager.initFramework();
     }
-
+    
     @AfterAll
     public static void afterAll() {
         InitManager.quitFramework();
+        clearLoggerUID();
     }
     
     @BeforeEach
     public void beforeEach() {
-        MDC.put("uid", "111");
         InitManager.openBrowser();
     }
     
@@ -32,6 +32,5 @@ public class BaseElementsTest {
     public void afterEach() {
         InitManager.clearCookies();
         getCartHelper().clearCartList();
-        MDC.clear();
     }
 }

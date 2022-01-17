@@ -16,7 +16,7 @@ public class InitManager {
     private static final InitManager instance = new InitManager();
 
     public static void initFramework() {
-        LOGGER.info("Start init framework");
+        LOGGER.debug("Start init framework");
         int implicityWait = Integer.parseInt(getThisProperties()
                 .getProperty(DRIVER_IMPLICITY_WAIT));
         LOGGER.debug("Setting implicityWait timeout to {} sec.", implicityWait);
@@ -30,7 +30,7 @@ public class InitManager {
 
     public static void quitFramework() {
         quitDriver();
-        LOGGER.info("Clearing the class store of web pages");
+        LOGGER.debug("Clearing the class store of web pages");
         getPageManager().clearMapPage();
     }
     

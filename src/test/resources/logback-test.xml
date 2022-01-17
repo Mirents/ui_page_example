@@ -12,13 +12,9 @@
             <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
         </encoder>
     </appender>
-    
-    <logger name="io.github.mirents" level="INFO" />
-    <logger name="io.github.mirents.tests" level="WARN">
-        <appender-ref ref="FILE" />
-    </logger> 
 
-    <root level="debug">
-        <appender-ref ref="STDOUT" />
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

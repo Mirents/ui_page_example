@@ -71,7 +71,7 @@ public class ProductObjectTest extends BaseObjectTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(input)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE)
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_SUCCESS_MESSAGE)
                 .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
     }
     
