@@ -2,7 +2,7 @@
 ### Description:
 The framework uses examples of different presentation models for web pages: "PageObject" and "PageElement".
 ## Difference diagram
-![Image alt](https://github.com/Mirents/ui_page_example/raw/master/src/test/resources/SchemeFramework.jpg)
+![Image alt](https://github.com/Mirents/ui_page_example/raw/main/src/test/resources/SchemeFramework.jpg)
 ### Applied technology:
 - Language: Java 1.8
 - Build Automation Tool: Maven
