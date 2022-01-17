@@ -1,16 +1,13 @@
 package com.dws.tests;
 
 import com.dws.test.base.BaseObjectTest;
+import com.dws.test.base.ExpectedResultConstant;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Testing the product page")
 public class ProductObjectTest extends BaseObjectTest {
-    String colorErrorMessage = "204, 0, 0";
-    String textErrorMessage = "Quantity should be positive";
-    String colorSuccessMessage = "145, 189, 9";
-    String textSuccessMessage = "The product has been added to your shopping cart";
 
     @Test
     public void CheckCartPriceTest() {
@@ -28,8 +25,8 @@ public class ProductObjectTest extends BaseObjectTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(3)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorSuccessMessage)
-                .assertBarNotificationText(textSuccessMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_SUCCESS_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
         // Go to the "Electronics - Cell phones" menu
         apptest
                 .getMenuToPage()
@@ -45,8 +42,8 @@ public class ProductObjectTest extends BaseObjectTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(4)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorSuccessMessage)
-                .assertBarNotificationText(textSuccessMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_SUCCESS_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
         // Checking product quantity in the top menu
         apptest
                 .getMenuToPage()
@@ -74,8 +71,8 @@ public class ProductObjectTest extends BaseObjectTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(input)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorSuccessMessage)
-                .assertBarNotificationText(textSuccessMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
     }
     
     @ParameterizedTest
@@ -96,8 +93,8 @@ public class ProductObjectTest extends BaseObjectTest {
                 .inputQuanityClear()
                 .inputQuanityEnterText(input)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorErrorMessage)
-                .assertBarNotificationText(textErrorMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_ERROR_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_ERROR_MESSAGE);
     }
     
     @Test
