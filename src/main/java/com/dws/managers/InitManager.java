@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 public class InitManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(InitManager.class);
-    private static final InitManager initManager = new InitManager();
+    private static final InitManager instance = new InitManager();
 
     public static void initFramework() {
         LOGGER.info("Start init framework");
@@ -46,21 +46,21 @@ public class InitManager {
         } catch(WebDriverException ex) {
             if(ex.getLocalizedMessage().contains("ERR_INTERNET_DISCONNECTED")) {
                 String message = "No internet connection | "
-                        + initManager.getClass().getName();
+                        + instance.getClass().getName();
                 LOGGER.error(message);
                 Assertions.fail(message);
             } else {
                 String message = "Unknown error when opening the site related "
                         + "to the web driver: " +
                         ex.getLocalizedMessage() + " | " +
-                        initManager.getClass().getName();
+                        instance.getClass().getName();
                 LOGGER.error(message);
                 Assertions.fail(message);
             }
         } catch(Exception ex) {
             String message = "Unknown error when opening the site: " +
                         ex.getLocalizedMessage() + " |" +
-                        initManager.getClass().getName();
+                        instance.getClass().getName();
             LOGGER.error(message);
             Assertions.fail(message);
         }
