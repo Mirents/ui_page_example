@@ -1,16 +1,13 @@
 package com.dws.tests;
 
 import com.dws.test.base.BaseElementsTest;
+import com.dws.test.base.ExpectedResultConstant;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Testing the product page")
 public class ProductElementsTest extends BaseElementsTest {
-    private String colorErrorMessage = "204, 0, 0";
-    private String textErrorMessage = "Quantity should be positive";
-    private String colorSuccessMessage = "145, 189, 9";
-    private String textSuccessMessage = "The product has been added to your shopping cart";
 
     @Test
     public void CheckCartPriceTest() {
@@ -25,8 +22,8 @@ public class ProductElementsTest extends BaseElementsTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(3)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorSuccessMessage)
-                .assertBarNotificationText(textSuccessMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_SUCCESS_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
         // Go to the "Electronics - Cell phones" menu
         menuSteps
                 .clickLeftMenu("Electronics")
@@ -39,8 +36,8 @@ public class ProductElementsTest extends BaseElementsTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(4)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorSuccessMessage)
-                .assertBarNotificationText(textSuccessMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_SUCCESS_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
         // Checking product quantity in the top menu
         menuSteps
                 .assertLabelShoppingCartQuantity()
@@ -64,8 +61,8 @@ public class ProductElementsTest extends BaseElementsTest {
                 .inputQuanityClear()
                 .inputQuanityEnterNumber(input)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorSuccessMessage)
-                .assertBarNotificationText(textSuccessMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_SUCCESS_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_SUCCESS_MESSAGE);
     }
     
     @ParameterizedTest
@@ -82,8 +79,8 @@ public class ProductElementsTest extends BaseElementsTest {
                 .inputQuanityClear()
                 .inputQuanityEnterText(input)
                 .clickButtonAddToCart()
-                .assertBarNotificationColor(colorErrorMessage)
-                .assertBarNotificationText(textErrorMessage);
+                .assertBarNotificationColor(ExpectedResultConstant.COLOR_ERROR_MESSAGE)
+                .assertBarNotificationText(ExpectedResultConstant.TEXT_ERROR_MESSAGE);
     }
     
     @Test
