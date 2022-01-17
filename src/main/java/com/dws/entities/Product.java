@@ -1,9 +1,9 @@
-package com.dws.helper;
+package com.dws.entities;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class ProductHelper {
+public class Product {
     @Getter @Setter
     private String name;
     @Getter @Setter
@@ -11,7 +11,7 @@ public class ProductHelper {
     @Getter @Setter
     private int quantity;
     
-    public ProductHelper(String name, float price, int quantity) {
+    public Product(String name, float price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
