@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class ListElements {
     protected static final Logger LOGGER = LoggerFactory.getLogger(ListElements.class);
     protected Actions action = new Actions(getDriver());
-    private final By byThisElem;
+    private By byThisElem;
 
     public ListElements(By by) {
         this.byThisElem = by;
