@@ -1,7 +1,7 @@
 package com.dws.tests;
 
 import com.dws.test.base.BaseElementsTest;
-import com.dws.test.base.ExpectedResultConstant;
+import com.dws.utils.ExpectedResultConstant;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

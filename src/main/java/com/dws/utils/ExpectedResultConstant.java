@@ -1,4 +1,4 @@
-package com.dws.test.base;
+package com.dws.utils;
 
 public class ExpectedResultConstant {
     public final static String COLOR_ERROR_MESSAGE = "204, 0, 0";
