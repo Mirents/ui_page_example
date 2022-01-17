@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public class Element implements WebElement, WrapsElement {
     protected static final Logger LOGGER = LoggerFactory.getLogger(Element.class);
-    private final By byThisElem;
+    private By byThisElem;
 
     public Element(By by) {
         this.byThisElem = by;
