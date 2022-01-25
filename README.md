@@ -15,7 +15,7 @@ The framework uses examples of different presentation models for web pages: "Pag
 - Separating fixtures from tests
 - Separating BOM layers
 - Launching the browser in normal and non-graphical mode
-- Logging with UUID generation
+- Logging with UUID generator using Mapped Diagnostic Context (MDC)
 - Run on Unix and Windows operating systems
 - Element highlighting when interacting
 ### Installation and launch
