@@ -1,6 +1,6 @@
 ## Tutorial Project for Automated Testing Using "PageObject" and "PageElement" 
 ### Description:
-The framework uses examples of different presentation models for web pages: "PageObject" and "PageElement".
+The framework uses examples of different web page presentation models: "PageObject" and "PageElement" to test the site http://demowebshop.tricentis.com/.
 ### Difference diagram
 ![Image alt](https://github.com/Mirents/ui_page_example/raw/main/src/test/resources/SchemeFramework.jpg)
 ### Applied technology:
