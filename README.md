@@ -9,7 +9,7 @@ The framework uses examples of different web page presentation models: "PageObje
 - Frameworks: JUnit 5
 - Logger: Logback with Slf4j
 - Drivers used: Selenium
-- Test website: demowebshop.tricentis.com
+- Test website: http://demowebshop.tricentis.com/
 ### Features:
 - Separating Test Implementation and Test Specification
 - Separating fixtures from tests
